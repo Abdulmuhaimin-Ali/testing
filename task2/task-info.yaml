@@ -1,0 +1,107 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 113
+    length: 47
+    placeholder_text: create and initialize instance variable '_type'
+    initial_state:
+      length: 47
+      offset: 113
+    initialized_from_dependency: false
+    possible_answer: self._type =""
+    selected: false
+    status: Unchecked
+  - offset: 170
+    length: 13
+    placeholder_text: setter method
+    initial_state:
+      length: 13
+      offset: 170
+    initialized_from_dependency: false
+    possible_answer: setType(self,type)
+    selected: false
+    status: Unchecked
+  - offset: 193
+    length: 12
+    placeholder_text: statement(s)
+    initial_state:
+      length: 12
+      offset: 193
+    initialized_from_dependency: false
+    possible_answer: self._type=type
+    selected: false
+    status: Unchecked
+  - offset: 215
+    length: 13
+    placeholder_text: getter method
+    initial_state:
+      length: 13
+      offset: 215
+    initialized_from_dependency: false
+    possible_answer: getType(self)
+    selected: false
+    status: Unchecked
+  - offset: 238
+    length: 12
+    placeholder_text: statement(s)
+    initial_state:
+      length: 12
+      offset: 238
+    initialized_from_dependency: false
+    possible_answer: return self._type
+    selected: false
+    status: Unchecked
+  text: |+
+    # Replace the placeholders with code and run the Python program
+
+    class Dinosaur:
+        def __init__(self):
+            create and initialize instance variable '_type'
+
+        def setter method:
+            statement(s)
+
+        def getter method:
+            statement(s)
+
+    # Create three dinsosaurs
+    d1 = Dinosaur()
+    d2 = Dinosaur()
+    d3 = Dinosaur()
+
+    # Set their types
+    d1.setType("T-Rex")
+    d2.setType("Velociraptor")
+    d3.setType("Stegosaurus")
+
+    # Print the types
+    print(d1.getType())
+    print(d2.getType())
+    print(d3.getType())
+
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |+
+    from test_helper import run_common_tests, failed, passed, get_answer_placeholders
+
+
+    def test_answer_placeholders():
+        placeholders = get_answer_placeholders()
+        placeholder = placeholders[0]
+        if placeholder == "":       # TODO: your condition here
+            passed()
+        else:
+            failed()
+
+
+    if __name__ == '__main__':
+        run_common_tests()
+        # test_answer_placeholders()       # TODO: uncomment test call
+
+
+  learner_created: false
+status: Unchecked
+record: -1

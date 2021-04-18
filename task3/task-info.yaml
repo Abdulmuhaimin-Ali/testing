@@ -1,0 +1,69 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 87
+    length: 36
+    placeholder_text: add header here for '__add__' method
+    initial_state:
+      length: 36
+      offset: 87
+    initialized_from_dependency: false
+    possible_answer: __add__(self, other)
+    selected: false
+    status: Unchecked
+  - offset: 133
+    length: 30
+    placeholder_text: statements of '__add__' method
+    initial_state:
+      length: 30
+      offset: 133
+    initialized_from_dependency: false
+    possible_answer: |-
+      if isinstance(other,Cream):
+                  return "Yum"
+    selected: false
+    status: Unchecked
+  text: |+
+    # Replace the placeholders with code and run the Python program
+
+    class Coffee:
+        def add header here for '__add__' method:
+            statements of '__add__' method
+
+    class Cream:
+        def __init__(self):
+            self._percent=10
+
+
+    coffee = Coffee()
+    cream = Cream()
+
+    # Test the "add" method
+    print(coffee+cream)
+
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |+
+    from test_helper import run_common_tests, failed, passed, get_answer_placeholders
+
+
+    def test_answer_placeholders():
+        placeholders = get_answer_placeholders()
+        placeholder = placeholders[0]
+        if placeholder == "":       # TODO: your condition here
+            passed()
+        else:
+            failed()
+
+
+    if __name__ == '__main__':
+        run_common_tests()
+        # test_answer_placeholders()       # TODO: uncomment test call
+
+
+  learner_created: false
+status: Unchecked
+record: -1

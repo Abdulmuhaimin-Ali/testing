@@ -1,0 +1,67 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 293
+    length: 16
+    placeholder_text: create Banana b1
+    initial_state:
+      length: 16
+      offset: 293
+    initialized_from_dependency: false
+    possible_answer: b1=Banana()
+    selected: false
+    status: Unchecked
+  - offset: 310
+    length: 16
+    placeholder_text: create Banana b2
+    initial_state:
+      length: 16
+      offset: 310
+    initialized_from_dependency: false
+    possible_answer: b2=Banana()
+    selected: false
+    status: Unchecked
+  text: |+
+    # Replace the placeholders with code and run the Python program
+
+    class Banana:
+        bananaID =0
+        def __init__(self):
+            Banana.bananaID += 1
+            self._ID = Banana.bananaID
+        def __str__(self):
+            return "This banana has an id of "+ str(self._ID)
+
+    # Create two banana objects
+    create Banana b1
+    create Banana b2
+
+    print(b1)
+    print(b2)
+
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |+
+    from test_helper import run_common_tests, failed, passed, get_answer_placeholders
+
+
+    def test_answer_placeholders():
+        placeholders = get_answer_placeholders()
+        placeholder = placeholders[0]
+        if placeholder == "":       # TODO: your condition here
+            passed()
+        else:
+            failed()
+
+
+    if __name__ == '__main__':
+        run_common_tests()
+        # test_answer_placeholders()       # TODO: uncomment test call
+
+
+  learner_created: false
+status: Unchecked
+record: -1
